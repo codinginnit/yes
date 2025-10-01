@@ -1,29 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>!!! WELCOME TO MY ULTIMATE WEBSITE !!!</title>
+  <title>!!! CURSED WEBSITE 9999 !!!</title>
   <style>
     body {
-      background: url("https://www.w3schools.com/w3images/lights.jpg");
-      background-repeat: repeat;
+      background: repeating-linear-gradient(45deg, hotpink, lime, cyan, yellow 20px);
       font-family: Comic Sans MS, cursive, sans-serif;
       color: lime;
       text-align: center;
+      cursor: crosshair;
+      animation: spinPage 15s infinite linear, spinBackground 5s infinite linear;
+      transform-origin: center;
     }
+
+    @keyframes spinPage {
+      0% { transform: rotate(0deg) scale(1); }
+      25% { transform: rotate(90deg) scale(1.2); }
+      50% { transform: rotate(180deg) scale(1); }
+      75% { transform: rotate(270deg) scale(0.8); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+
+    @keyframes spinBackground {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+
     h1 {
+      font-size: 120px;
+      animation: glitch 0.1s infinite, shake 0.1s infinite;
       color: red;
-      font-size: 80px;
-      text-shadow: 5px 5px 15px yellow;
+      text-shadow: 3px 3px yellow, -3px -3px cyan;
     }
-    blink {
-      animation: blinker 0.3s linear infinite;
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px lime, -2px -2px magenta; }
+      50% { text-shadow: -5px 5px cyan, 5px -5px yellow; }
+      100% { text-shadow: 3px -3px red, -3px 3px blue; }
     }
-    @keyframes blinker {
-      50% { opacity: 0; }
+
+    @keyframes shake {
+      0% { transform: translate(0px, 0px) rotate(0deg); }
+      25% { transform: translate(5px, 0px) rotate(3deg); }
+      50% { transform: translate(0px, 5px) rotate(-3deg); }
+      75% { transform: translate(-5px, 0px) rotate(3deg); }
+      100% { transform: translate(0px, -5px) rotate(-3deg); }
     }
+
     .rainbow {
       animation: rainbow 1s infinite;
     }
+
     @keyframes rainbow {
       0% { color: red; }
       20% { color: orange; }
@@ -32,62 +59,117 @@
       80% { color: blue; }
       100% { color: purple; }
     }
-    table {
-      border: 10px dashed magenta;
-      background: cyan;
-      margin: auto;
+
+    img {
+      border: 8px double magenta;
+      animation: spinImg 3s infinite linear;
     }
+
+    @keyframes spinImg {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.5); }
+      100% { transform: rotate(360deg) scale(1); }
+    }
+
+    table {
+      border: 10px groove red;
+      background: black;
+      margin: auto;
+      transform: skew(15deg, 10deg);
+    }
+
     td {
-      padding: 20px;
+      padding: 25px;
+      font-size: 35px;
+      color: cyan;
+      background: purple;
+    }
+
+    marquee {
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .cursor-emoji {
+      position: absolute;
+      pointer-events: none;
+      animation: floatUp 2s forwards;
       font-size: 30px;
+    }
+
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-100px) scale(0.5); }
     }
   </style>
   <script>
-    window.onload = function() {
-      alert("WELCOME TO THE BEST WEBSITE EVER!!!!");
-      alert("ARE YOU READY???");
-      alert("CLICK OK TO CONTINUE...");
-    };
+    // INFINITE POPUP LOOP
+    function spamPopups() {
+      while (true) {
+        alert("⚠️ YOU CAN'T ESCAPE ⚠️");
+      }
+    }
+    document.onclick = spamPopups;
+
+    // CURSOR TRAIL
+    document.addEventListener("mousemove", function(e) {
+      let emoji = document.createElement("div");
+      emoji.innerHTML = ["🔥","💀","✨","😈","💥","🌈"][Math.floor(Math.random()*6)];
+      emoji.className = "cursor-emoji";
+      emoji.style.left = e.pageX + "px";
+      emoji.style.top = e.pageY + "px";
+      document.body.appendChild(emoji);
+      setTimeout(()=>emoji.remove(),2000);
+    });
   </script>
 </head>
 <body>
-  <embed src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" autostart="true" loop="true" hidden="true"></embed>
-
-  <marquee behavior="alternate" scrollamount="30">
-    <h1>🔥🔥🔥 MY AWESOME WEBSITE 🔥🔥🔥</h1>
+  <marquee behavior="alternate" scrollamount="50">
+    <h1>💥💥💥 CURSED WEBSITE 9999 💥💥💥</h1>
   </marquee>
 
-  <blink><h2 class="rainbow">This site is EXTREME!!</h2></blink>
+  <marquee direction="right" scrollamount="40" class="rainbow">
+    <h2>INFINITE CHAOS 🌈🔥💀✨</h2>
+  </marquee>
 
-  <marquee direction="left" scrollamount="15">
-    <img src="https://media.giphy.com/media/3o7TKrBDf6bkL5DJ0o/giphy.gif">
-    <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif">
-    <img src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif">
+  <marquee direction="left" scrollamount="25">
+    <img src="https://media.giphy.com/media/3o7TKrBDf6bkL5DJ0o/giphy.gif" width="200">
+    <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif" width="200">
+    <img src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" width="200">
+    <img src="https://placekitten.com/250/250" width="200">
+    <img src="https://placebear.com/250/250" width="200">
+    <img src="https://www.w3schools.com/w3images/mountains.jpg" width="200">
   </marquee>
 
   <table>
     <tr>
-      <td>WOW</td>
-      <td>SUCH</td>
-      <td>COLORS</td>
+      <td>🔥</td>
+      <td>💀</td>
+      <td>✨</td>
     </tr>
     <tr>
-      <td>✨</td>
-      <td>💀</td>
-      <td>🔥</td>
+      <td>GLITCH</td>
+      <td>CHAOS</td>
+      <td>PAIN</td>
+    </tr>
+    <tr>
+      <td>🌈</td>
+      <td>😈</td>
+      <td>💥</td>
     </tr>
   </table>
 
-  <marquee direction="up" height="300" scrollamount="10">
-    <h3 style="color: hotpink; background: yellow;">Scrolling text forever!!!</h3>
-    <h3 style="color: aqua; background: purple;">Can't stop won't stop!!!</h3>
-    <h3 style="color: green; background: orange;">Ugly and proud!!!</h3>
+  <marquee direction="up" height="300" scrollamount="20">
+    <h2 class="rainbow">SPINNING TEXT & IMAGES FOREVER</h2>
+    <img src="https://www.w3schools.com/w3images/nature.jpg" width="200">
+    <img src="https://www.w3schools.com/w3images/lights.jpg" width="200">
+    <img src="https://www.w3schools.com/w3images/mountains.jpg" width="200">
+    <img src="https://placekitten.com/400/400" width="200">
+    <img src="https://placebear.com/400/400" width="200">
   </marquee>
 
-  <p><img src="https://www.free-website-hit-counter.com/c.php?d=9&id=13858&s=2" alt="Visitor Counter"></p>
-
-  <h2 style="font-size: 60px; background: yellow; color: purple;">
-    THANKS FOR VISITING MY COOL PAGE 💖💖💖
+  <h2 style="font-size: 90px; background: yellow; color: purple;">
+    THANKS FOR VISITING — NOW TRY TO ESCAPE 😈
   </h2>
 </body>
 </html>
